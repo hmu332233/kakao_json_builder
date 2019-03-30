@@ -12,7 +12,7 @@ function CardLayout(props) {
       <div className={styles.CardLayout__body}>
         <Profile className={styles.CardLayout__body__profile} imageUrl={props.profile.imageUrl} nickname={props.profile.nickname} />
         {props.children}
-        <Buttons buttons={props.buttons} />
+        <Buttons className={styles.CardLayout__body__buttons} buttons={props.buttons} />
       </div>
     </div>
   );

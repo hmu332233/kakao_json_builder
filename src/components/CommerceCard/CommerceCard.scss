@@ -1,2 +1,26 @@
 .CommerceCard {
+  &__contents {
+    &__priceRow {
+      display: flex;
+      margin-bottom: 8px;
+      font-size: 14px;
+      &__price {
+        margin-right: 4px;
+        font-weight: bold;
+      }
+      &__discount {
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration-line: line-through;
+      }
+    }
+    &__discount {
+      font-size: 12px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 4px;
+    }
+    &__description {
+      font-size: 12px;
+    }
+  }
 }

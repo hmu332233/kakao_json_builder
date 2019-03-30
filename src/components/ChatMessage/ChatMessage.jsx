@@ -16,7 +16,7 @@ function ChatMessage(props) {
         imageUrl={'http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg'}
         altText={'보물상자입니다'}
       />*/}
-      <BasicCard
+      {/*<BasicCard
         title={'보물상자'}
         description={'보물상자 안에는 뭐가 있을까?'}
         thumbnail={{ imageUrl: 'http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg' }}
@@ -33,7 +33,7 @@ function ChatMessage(props) {
             webLinkUrl: 'https://e.kakao.com/t/hello-ryan'
           }
         ]}
-      />
+      />*/}
       <CommerceCard
         description={'따끈따끈한 보물 상자 팝니다'}
         price={10000}
