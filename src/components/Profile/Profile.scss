@@ -1,0 +1,16 @@
+.Profile {
+  display: flex;
+  align-items: center;
+  &__image {
+    margin-right: 4px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 1px solid #afafaf;
+  }
+
+  &__name {
+    font-size: 14px;
+    color: #afafaf;
+  }
+}
