@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html -d build --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -17,22 +18,19 @@
   },
   "homepage": "https://github.com/hmu332233/kakao_json_builder#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
-    "autoprefixer": "^8.2.0",
-    "babel-plugin-module-resolver": "^3.1.1",
-    "node-sass": "^4.9.4",
-    "parcel-bundler": "^1.6.2",
-    "postcss-modules": "^1.1.0"
+    "autoprefixer": "^9.5.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "parcel-bundler": "^1.12.3",
+    "postcss-modules": "^1.4.1"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.5.0",
-    "tabler-ui": "0.0.32"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
