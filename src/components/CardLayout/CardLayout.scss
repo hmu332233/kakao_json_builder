@@ -1,0 +1,19 @@
+.CardLayout {
+  width: 300px;
+  background-color: #ffffff;
+
+  border-radius: 4px;
+  overflow: hidden;
+  &__image {
+    width: 100%;
+  }
+
+  &__body {
+    padding: 8px;
+    &__profile {
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
