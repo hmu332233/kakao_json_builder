@@ -1,0 +1,13 @@
+.ChatMessageLayout {
+  display: flex;
+
+  &__profile {
+    margin-right: 12px;
+  }
+  &__body {
+    &__name {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  }
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ChatBox.scss';
 
+import ChatMessage from 'components/ChatMessage';
+
 function ChatBoxHeader(props) {
   return (
     <div className={styles.ChatBoxHeader}>
@@ -14,7 +16,9 @@ function ChatBox(props) {
   return (
     <div className={styles.ChatBox}>
       <ChatBoxHeader title={'카카오 테스트봇'} />
-      <div className={styles.ChatBox__body}></div>
+      <div className={styles.ChatBox__body}>
+        <ChatMessage />
+      </div>
     </div>
   );
 }
