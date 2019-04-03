@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './ListCard.scss';
 
 import CardLayout from 'components/CardLayout';
+import ListItem from 'components/ListItem';
 
 function ListCard(props) {
   return (
@@ -10,7 +11,15 @@ function ListCard(props) {
       header={props.header}
       buttons={props.buttons}
     >
-      aaa
+      {props.items.map((item, index) => (
+        <ListItem
+          key={index}
+          className={styles.ListCard__item}
+          imageUrl={item.imageUrl}
+          title={item.title}
+          description={item.description}
+        />
+      ))}
     </CardLayout>
   );
 }
