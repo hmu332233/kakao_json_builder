@@ -8,6 +8,7 @@ import SimpleImage from 'components/SimpleImage';
 import BasicCard from 'components/BasicCard';
 import CommerceCard from 'components/CommerceCard';
 import ListCard from 'components/ListCard';
+import Carousel from 'components/Carousel';
 
 function ChatMessage(props) {
   return (
@@ -65,7 +66,7 @@ function ChatMessage(props) {
           }
         ]}
       />*/}
-      <ListCard
+      {/*<ListCard
         header={{
           title: '카카오 i 디벨로퍼스를 소개합니다',
           imageUrl:
@@ -110,7 +111,73 @@ function ChatMessage(props) {
               'https://namu.wiki/w/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88'
           }
         ]}
+      />*/}
+      <Carousel
+        type={Carousel.TYPE.BASIC_CARD}
+        items={[
+          {
+            title: '보물상자',
+            description: '보물상자 안에는 뭐가 있을까',
+            thumbnail: {
+              imageUrl:
+                'http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg'
+            },
+            buttons: [
+              {
+                action: 'message',
+                label: '열어보기',
+                messageText: '짜잔! 우리가 찾던 보물입니다'
+              },
+              {
+                action: 'webLink',
+                label: '구경하기',
+                webLinkUrl: 'https://e.kakao.com/t/hello-ryan'
+              }
+            ]
+          },
+          {
+            title: '보물상자2',
+            description: '보물상자2 안에는 뭐가 있을까',
+            thumbnail: {
+              imageUrl:
+                'http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg'
+            },
+            buttons: [
+              {
+                action: 'message',
+                label: '열어보기',
+                messageText: '짜잔! 우리가 찾던 보물입니다'
+              },
+              {
+                action: 'webLink',
+                label: '구경하기',
+                webLinkUrl: 'https://e.kakao.com/t/hello-ryan'
+              }
+            ]
+          },
+          {
+            title: '보물상자3',
+            description: '보물상자3 안에는 뭐가 있을까',
+            thumbnail: {
+              imageUrl:
+                'http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg'
+            },
+            buttons: [
+              {
+                action: 'message',
+                label: '열어보기',
+                messageText: '짜잔! 우리가 찾던 보물입니다'
+              },
+              {
+                action: 'webLink',
+                label: '구경하기',
+                webLinkUrl: 'https://e.kakao.com/t/hello-ryan'
+              }
+            ]
+          }
+        ]}
       />
+      <Carousel type={Carousel.TYPE.COMMERCE_CARD} />
     </ChatMessageLayout>
   );
 }

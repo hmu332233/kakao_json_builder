@@ -6,9 +6,11 @@ import CardHeader from 'components/CardHeader';
 import Profile from 'components/Profile';
 import Buttons from 'components/Buttons';
 
+import classnames from 'classnames';
+
 function CardLayout(props) {
   return (
-    <div className={styles.CardLayout}>
+    <div className={classnames(styles.CardLayout, props.className)}>
       {props.header && <CardHeader title={props.header.title} imageUrl={props.header.imageUrl} /> }
       {props.thumbnail && <img className={styles.CardLayout__image} src={props.thumbnail.imageUrl} />}
       <div className={styles.CardLayout__body}>
@@ -21,6 +23,7 @@ function CardLayout(props) {
 }
 
 CardLayout.propTypes = {
+  className: PropTypes.string,
   header: PropTypes.shape({
     title: PropTypes.string,
     imageUrl: PropTypes.string
@@ -36,6 +39,7 @@ CardLayout.propTypes = {
   buttons: PropTypes.array
 };
 CardLayout.defaultProps = {
+  className: ''
 };
 
 export default CardLayout;

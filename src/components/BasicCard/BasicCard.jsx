@@ -7,6 +7,7 @@ import CardLayout from 'components/CardLayout';
 function BasicCard(props) {
   return (
     <CardLayout
+      className={props.className}
       thumbnail={props.thumbnail}
       profile={props.profile}
       buttons={props.buttons}

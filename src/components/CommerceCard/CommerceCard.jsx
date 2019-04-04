@@ -11,6 +11,7 @@ function CommerceCard(props) {
   const discountText = `${props.discount}${currencyText} 할인`;
   return (
     <CardLayout
+      className={props.className}
       thumbnail={props.thumbnail}
       profile={props.profile}
       buttons={props.buttons}
@@ -30,9 +31,13 @@ function CommerceCard(props) {
 CommerceCard.propTypes = {
   ...CardLayout.propTypes,
   description: PropTypes.string,
+  price: PropTypes.number,
+  discount: PropTypes.number,
 };
 CommerceCard.defaultProps = {
-  description: ''
+  description: '',
+  price: 0,
+  discount: 0
 };
 
 export default CommerceCard;
