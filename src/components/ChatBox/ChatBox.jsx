@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './ChatBox.scss';
 
 import ChatMessage from 'components/ChatMessage';
+import QuickReplies from 'components/QuickReplies';
 
 function ChatBoxHeader(props) {
   return (
@@ -18,6 +19,25 @@ function ChatBox(props) {
       <ChatBoxHeader title={'카카오 테스트봇'} />
       <div className={styles.ChatBox__body}>
         <ChatMessage />
+        <QuickReplies
+          items={[
+            {
+              label: '가',
+              action: 'message',
+              messageText: '가'
+            },
+            {
+              label: '나',
+              action: 'message',
+              messageText: '다'
+            },
+            {
+              label: '다',
+              action: 'message',
+              messageText: '다'
+            }
+          ]} 
+        />
       </div>
     </div>
   );

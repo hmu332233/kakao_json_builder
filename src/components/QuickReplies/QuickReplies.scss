@@ -1,0 +1,12 @@
+.QuickReplies {
+  width: 400px;
+  &__item {
+    margin-right: 12px;
+  }
+}
+
+.MessageBox {
+  padding: 8px 24px;
+  border-radius: 25px;
+  background-color: #ffe100;
+}
