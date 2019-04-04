@@ -7,7 +7,7 @@ import ChatBox from 'components/ChatBox';
 function ChatPreview(props) {
   return (
     <div className={styles.ChatPreview}>
-      <ChatBox />
+      <ChatBox chats={props.chats} />
     </div>
   );
 }

@@ -2,18 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Carousel.scss';
 
+import { MESSAGE } from 'constants';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 
 import BasicCard from 'components/BasicCard';
 import CommerceCard from 'components/CommerceCard';
 
-const TYPE = {
-  BASIC_CARD: 'basicCard',
-  COMMERCE_CARD: 'commerceCard'
-};
 
 function Carousel(props) {
-  const Item = props.type === TYPE.BASIC_CARD ? BasicCard : CommerceCard;
+  const Item = props.cardType === MESSAGE.TYPE.BASIC_CARD ? BasicCard : CommerceCard;
 
   const data = props.items.map((item, index) => (
     <Item
@@ -34,13 +31,12 @@ function Carousel(props) {
   );
 }
 
-Carousel.TYPE = TYPE;
 Carousel.propTypes = {
-  type: PropTypes.oneOf([TYPE.BASIC_CARD, TYPE.COMMERCE_CARD]),
+  cardType: PropTypes.oneOf([MESSAGE.TYPE.BASIC_CARD, MESSAGE.TYPE.COMMERCE_CARD]),
   items: PropTypes.array,
 };
 Carousel.defaultProps = {
-  type: TYPE.BASIC_CARD,
+  cardType: MESSAGE.TYPE.BASIC_CARD,
   items: []
 };
 

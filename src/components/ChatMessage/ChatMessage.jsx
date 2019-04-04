@@ -13,6 +13,7 @@ import ListCard from 'components/ListCard';
 import Carousel from 'components/Carousel';
 
 function ChatMessage({ type, ...props }) {
+  console.log(props);
   let MessageComponent;
   switch (type) {
     case MESSAGE.TYPE.SIMPLE_TEXT:
