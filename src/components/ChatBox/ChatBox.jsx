@@ -18,7 +18,7 @@ function ChatBox(props) {
     <div className={styles.ChatBox}>
       <ChatBoxHeader title={'카카오 테스트봇'} />
       <div className={styles.ChatBox__body}>
-        <ChatMessage />
+        <ChatMessage text={'간단한 텍스트 요소입니다.'} />
         <QuickReplies
           items={[
             {

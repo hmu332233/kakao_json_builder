@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ChatMessage.scss';
 
+import { MESSAGE } from 'constants';
+
 import ChatMessageLayout from 'components/ChatMessageLayout';
 import SimpleText from 'components/SimpleText';
 import SimpleImage from 'components/SimpleImage';
@@ -10,9 +12,31 @@ import CommerceCard from 'components/CommerceCard';
 import ListCard from 'components/ListCard';
 import Carousel from 'components/Carousel';
 
-function ChatMessage(props) {
+function ChatMessage({ type, ...props }) {
+  let MessageComponent;
+  switch (type) {
+    case MESSAGE.TYPE.SIMPLE_TEXT:
+      MessageComponent = SimpleText;
+    break;
+    case MESSAGE.TYPE.SIMPLE_IMAGE:
+      MessageComponent = SimpleImage;
+    break;
+    case MESSAGE.TYPE.BASIC_CARD:
+      MessageComponent = BasicCard;
+    break;
+    case MESSAGE.TYPE.COMMERCE_CARD:
+      MessageComponent = CommerceCard;
+    break;
+    case MESSAGE.TYPE.LIST_CARD:
+      MessageComponent = ListCard;
+    break;
+    case MESSAGE.TYPE.CAROUSEL:
+      MessageComponent = Carousel;
+    break;
+  }
   return (
     <ChatMessageLayout name={'테스트 봇'}>
+      <MessageComponent {...props} />
       {/*<SimpleText text={'간단한 텍스트 요소입니다.'} />
       <SimpleImage
         imageUrl={'http://k.kakaocdn.net/dn/83BvP/bl20duRC1Q1/lj3JUcmrzC53YIjNDkqbWK/i_6piz1p.jpg'}
@@ -112,6 +136,7 @@ function ChatMessage(props) {
           }
         ]}
       />*/}
+      {/*
       <Carousel
         type={Carousel.TYPE.BASIC_CARD}
         items={[
@@ -176,13 +201,17 @@ function ChatMessage(props) {
             ]
           }
         ]}
-      />
-      <Carousel type={Carousel.TYPE.COMMERCE_CARD} />
+      />*/}
+      {/*<Carousel type={Carousel.TYPE.COMMERCE_CARD} />*/}
     </ChatMessageLayout>
   );
 }
 
-ChatMessage.propTypes = {};
-ChatMessage.defaultProps = {};
+ChatMessage.propTypes = {
+  type: PropTypes.string,
+};
+ChatMessage.defaultProps = {
+  type: MESSAGE.TYPE.SIMPLE_TEXT
+};
 
 export default ChatMessage;
