@@ -11,10 +11,27 @@ import JsonEditor from 'components/JsonEditor';
 class MainApp extends React.Component {
   constructor(props) {
     super(props);
+    const defaultMessageJson = message.getDefaultMessageJson({ type: MESSAGE.TYPE.SIMPLE_TEXT });
     this.state = {
+      isError: false,
       type: MESSAGE.TYPE.SIMPLE_TEXT,
-      messageJson: message.getDefaultMessageJson({ type: MESSAGE.TYPE.SIMPLE_TEXT })
+      editorValue: JSON.stringify(defaultMessageJson),
+      chats: message.parseMessageJson(defaultMessageJson)
     };
+
+    this.handleChangeEditorValue = this.handleChangeEditorValue.bind(this)
+  }
+
+  handleChangeEditorValue(e) {
+    const { value } = e.currentTarget;
+    this.setState({ editorValue: value });
+
+    try {
+      const parsedValue = JSON.parse(value);
+      this.setState({ chats: message.parseMessageJson(parsedValue) });
+    } catch (e) {
+      this.setState({ isError: true });
+    }
   }
   render() {
     return (
@@ -22,10 +39,13 @@ class MainApp extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <ChatPreview chats={message.parseMessageJson(this.state.messageJson)} />
+              <ChatPreview chats={this.state.chats} />
             </div>
             <div className="col-6">
-              <JsonEditor value={this.state.messageJson} />
+              <JsonEditor
+                changeValueHandler={this.handleChangeEditorValue}
+                value={this.state.editorValue}
+              />
             </div>
           </div>
         </div>
