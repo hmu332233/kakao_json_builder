@@ -3,12 +3,18 @@ import { MESSAGE } from 'constants';
 export default {
   parseMessageJson: messageJson => {
     return messageJson.template.outputs.map(output => {
-      console.log(output);
       const type = Object.keys(output)[0];
-      return {
-        type,
-        data: output[type]
+      const data = output[type];
+
+      if (data.hasOwnProperty('thumbnails')) {
+        data.thumbnail = data.thumbnails[0];
+        delete data.thumbnails;
       }
+      if (data.hasOwnProperty('type')) {
+        data.cardType = data.type;
+        delete data.type;
+      }
+      return { type, data };
     });
   },
   getDefaultMessageJson: ({ type }) => {

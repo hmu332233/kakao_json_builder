@@ -11,11 +11,11 @@ import JsonEditor from 'components/JsonEditor';
 class MainApp extends React.Component {
   constructor(props) {
     super(props);
-    const defaultMessageJson = message.getDefaultMessageJson({ type: MESSAGE.TYPE.SIMPLE_TEXT });
+    const defaultMessageJson = message.getDefaultMessageJson({ type: MESSAGE.TYPE.CAROUSEL });
     this.state = {
       isError: false,
-      type: MESSAGE.TYPE.SIMPLE_TEXT,
-      editorValue: JSON.stringify(defaultMessageJson),
+      type: MESSAGE.TYPE.CAROUSEL,
+      editorValue: JSON.stringify(defaultMessageJson, null, 4),
       chats: message.parseMessageJson(defaultMessageJson)
     };
 
