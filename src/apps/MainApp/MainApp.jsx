@@ -8,6 +8,8 @@ import { message } from 'utils';
 import ChatPreview from 'components/ChatPreview';
 import JsonEditor from 'components/JsonEditor';
 
+import ChatMessageForm from 'containers/ChatMessageForm';
+
 class MainApp extends React.Component {
   constructor(props) {
     super(props);
@@ -42,6 +44,11 @@ class MainApp extends React.Component {
               <ChatPreview chats={this.state.chats} />
             </div>
             <div className="col-6">
+              <ChatMessageForm />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
               <JsonEditor
                 changeValueHandler={this.handleChangeEditorValue}
                 value={this.state.editorValue}
