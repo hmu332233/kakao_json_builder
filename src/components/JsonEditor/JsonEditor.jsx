@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import styles from './JsonEditor.scss';
 
 function JsonEditor(props) {
+  const handleTextareaChange = e => {
+    const value = e.currentTarget.value;
+    props.changeValueHandler(value);
+  };
   return (
     <div className={styles.JsonEditor}>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value={props.value} onChange={props.changeValueHandler}></textarea>
+      <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={props.value} onChange={handleTextareaChange}></textarea>
     </div>
   );
 }
 
 JsonEditor.propTypes = {
-  value: PropTypes.object,
+  value: PropTypes.string,
   changeValueHandler: PropTypes.func
 };
 JsonEditor.defaultProps = {

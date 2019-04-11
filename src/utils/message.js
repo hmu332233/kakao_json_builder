@@ -1,7 +1,7 @@
 import { MESSAGE } from 'constants';
 
 export default {
-  parseMessageJson: messageJson => {
+  parseMessageJson: function (messageJson) {
     return messageJson.template.outputs.map(output => {
       const type = Object.keys(output)[0];
       const data = output[type];
@@ -17,16 +17,22 @@ export default {
       return { type, data };
     });
   },
-  getDefaultMessageJson: ({ type }) => {
+  normalizeMessageJson: function ({ type, json }) {
     return {
       version: '2.0',
       template: {
         outputs: [
           {
-            [type]: MESSAGE.DEFAULT_DATA[type]
+            [type]: json
           }
         ]
       }
     }
+  },
+  getDefaultMessageJson: function ({ type }) {
+    return this.normalizeMessageJson({
+      type,
+      json: MESSAGE.DEFAULT_DATA[type]
+    });
   }
 }

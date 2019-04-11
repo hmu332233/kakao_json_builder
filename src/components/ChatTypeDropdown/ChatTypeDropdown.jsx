@@ -31,14 +31,16 @@ function ChatTypeDropdown(props) {
     <Dropdown
       className={styles.ChatTypeDropdown}
       items={items}
-      itemClickHandler={console.log}
+      itemClickHandler={props.itemClickHandler}
     />
   );
 }
 
 ChatTypeDropdown.propTypes = {
+  itemClickHandler: PropTypes.func,
 };
 ChatTypeDropdown.defaultProps = {
+  itemClickHandler: v => v
 };
 
 export default ChatTypeDropdown;
