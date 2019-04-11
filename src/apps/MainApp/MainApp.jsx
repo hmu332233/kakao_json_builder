@@ -22,13 +22,18 @@ class MainApp extends React.Component {
   }
 
   handleChangeValue(value) {
-    this.setState({ editorValue: value });
-
     try {
       const parsedValue = JSON.parse(value);
-      this.setState({ chats: message.parseMessageJson(parsedValue) });
+      this.setState({
+        isError: false,
+        editorValue: value,
+        chats: message.parseMessageJson(parsedValue)
+      });
     } catch (e) {
-      this.setState({ isError: true });
+      this.setState({
+        isError: true,
+        editorValue: value
+      });
     }
   }
   render() {
