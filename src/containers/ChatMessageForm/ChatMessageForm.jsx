@@ -4,6 +4,7 @@ import styles from './ChatMessageForm.scss';
 
 import ChatTypeDropdown from 'components/ChatTypeDropdown';
 import SimpleTextForm from 'containers/SimpleTextForm';
+import SimpleImageForm from 'containers/SimpleImageForm';
 import { MESSAGE } from 'constants';
 import { message } from 'utils';
 
@@ -11,7 +12,7 @@ class ChatMessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: MESSAGE.TYPE.SIMPLE_TEXT,
+      type: MESSAGE.TYPE.SIMPLE_IMAGE,
     };
 
     this.handleChange = this.handleChange.bind(this)
@@ -33,7 +34,8 @@ class ChatMessageForm extends React.Component {
         <ChatTypeDropdown
           itemClickHandler={this.handleChatTypeDropdownItemClick}
         />
-        <SimpleTextForm changeHandler={this.handleChange} />
+        {/*<SimpleTextForm changeHandler={this.handleChange} />*/}
+        <SimpleImageForm changeHandler={this.handleChange} />
       </div>
     );
   }
