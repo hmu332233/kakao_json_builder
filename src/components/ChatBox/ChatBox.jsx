@@ -21,6 +21,7 @@ function ChatBox(props) {
         {props.chats.map(chat => (
           <>
             <ChatMessage type={chat.type} {...chat.data} />
+            {/*
             <QuickReplies
               items={[
                 {
@@ -38,8 +39,9 @@ function ChatBox(props) {
                   action: 'message',
                   messageText: '다'
                 }
-              ]} 
-            />
+              ]}
+            /> 
+            */}
           </>
         ))}
       </div>

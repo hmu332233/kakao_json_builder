@@ -10,13 +10,15 @@ import JsonEditor from 'components/JsonEditor';
 
 import ChatMessageForm from 'containers/ChatMessageForm';
 
+const defaultMessageJson = message.getDefaultMessageJson({ type: MESSAGE.TYPE.CAROUSEL });
+
 class MainApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isError: false,
-      editorValue: '',
-      chats: []
+      editorValue: JSON.stringify(defaultMessageJson, null, 4),
+      chats: message.parseMessageJson(defaultMessageJson)
     };
     this.handleChangeValue = this.handleChangeValue.bind(this)
   }
@@ -40,15 +42,17 @@ class MainApp extends React.Component {
     return (
       <div className={styles.MainApp}>
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
             <div className="col-6">
               <ChatPreview chats={this.state.chats} />
             </div>
+            {/*
             <div className="col-6">
               <ChatMessageForm changeHandler={this.handleChangeValue} />
             </div>
+            */}
           </div>
-          <div className="row">
+          <div className="row mt-3">
             <div className="col-12">
               <JsonEditor
                 changeValueHandler={this.handleChangeValue}
