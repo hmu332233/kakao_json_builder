@@ -4833,10 +4833,10 @@ react-dom@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-react-horizontal-scrolling-menu@^0.5.7:
-  version "0.5.91"
-  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-0.5.91.tgz#02772776091532311187cb7ac695fcc37da955f4"
-  integrity sha512-g8dc1tru3slNLp0C5y/1rrFkSIET8uCNhXrpwNdt/gHcoxhgmE6mk1Xe+DvsY2TnpvxmFgTMGT1UJfqvEDnomA==
+react-horizontal-scrolling-menu@^0.6.12:
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-0.6.12.tgz#2669e86d99f178703a7d8421208c78b4b2977986"
+  integrity sha512-YGGJ7k+tMaBYRkrSZnEzvpFvAEj1uYFqICbFevvjHD8s56HwCwf5EbaBi+T622RE5gutXedZ108CDQQ67LhkcA==
 
 react-is@^16.8.1:
   version "16.8.6"
